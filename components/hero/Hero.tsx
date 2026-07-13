@@ -6,7 +6,7 @@ import Section from "../ui/Section";
 
 export default function Hero() {
   return (
-    <Section className="flex min-h-[88vh] items-center pt-0 md:min-h-screen md:pt-20 lg:pt-24">
+    <Section className="flex min-h-[88vh] items-start pt-38 sm:pt-24 md:min-h-screen md:items-center md:pt-20 lg:pt-24">
       <div className="relative w-full max-w-6xl">
 
         {/* Background Glow */}

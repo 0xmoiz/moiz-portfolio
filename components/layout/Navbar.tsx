@@ -12,16 +12,12 @@ const links = [
 ];
 
 export default function Navbar() {
-  const [visible, setVisible] = useState(false);
+  const [visible] = useState(true);
   const [hideOnFooter, setHideOnFooter] = useState(false);
   const [open, setOpen] = useState(false);
 
   useEffect(() => {
-    const handleScroll = () => {
-      setVisible(window.scrollY > 80);
-    };
-
-    window.addEventListener("scroll", handleScroll);
+   
 
     const footer = document.querySelector("footer");
 
@@ -39,11 +35,10 @@ export default function Navbar() {
 
       return () => {
         observer.disconnect();
-        window.removeEventListener("scroll", handleScroll);
+       
       };
     }
 
-    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   useEffect(() => {
@@ -52,13 +47,13 @@ export default function Navbar() {
 
   return (
     <>
-      <header
-        className={`fixed inset-0 pointer-events-none z-50 transition-all duration-500 ${
-          visible && !hideOnFooter
-            ? "translate-y-0 opacity-100"
-            : "-translate-y-10 opacity-0"
-        }`}
-      >
+     <header
+  className={`fixed inset-0 pointer-events-none z-50 transition-all duration-500 ${
+  hideOnFooter
+    ? "-translate-y-10 opacity-0"
+    : "translate-y-0 opacity-100"
+}`}
+>
         {/* Desktop Navbar */}
 
         <nav className="pointer-events-auto fixed left-1/2 top-6 hidden h-14 -translate-x-1/2 items-center gap-8 rounded-full border border-white/10 bg-white/[0.03] px-8 backdrop-blur-xl md:flex">
