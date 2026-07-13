@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
 import { AnimatePresence, motion } from "framer-motion";
-
+import { FileText, Download } from "lucide-react";
 const links = [
   { name: "About", href: "#about" },
   { name: "Skills", href: "#skills" },
@@ -73,12 +73,20 @@ export default function Navbar() {
             </a>
           ))}
 
-          <a
-            href="/resume.pdf"
-            className="rounded-full border border-white/10 px-5 py-2 text-sm transition hover:bg-white hover:text-black"
-          >
-            Resume ↗
-          </a>
+   <div className="flex flex-col gap-3 sm:flex-row sm:items-center">
+
+ <a
+  href="/resume.pdf"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="flex items-center gap-2 rounded-full border border-white/10 px-5 py-2 text-sm transition hover:bg-white hover:text-black"
+>
+  <FileText size={16} />
+  Resume
+</a>
+
+
+</div>
 
         </nav>
 

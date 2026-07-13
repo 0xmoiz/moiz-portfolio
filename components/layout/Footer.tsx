@@ -1,5 +1,5 @@
 "use client";
-
+import { FileText, Download } from "lucide-react";
 export default function Footer() {
   return (
     <footer className="mt-32 overflow-hidden border-t border-white/10 bg-[#111111]">
@@ -96,18 +96,28 @@ export default function Footer() {
 
           </div>
 
-          {/* Resume */}
+         <div className="flex flex-col gap-3 sm:flex-row sm:items-center">
 
-          <div className="flex justify-center lg:justify-end">
+  <a
+    href="/resume.pdf"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="flex w-full items-center justify-center gap-2 rounded-full bg-white px-5 py-3 text-sm font-medium text-black transition duration-300 hover:scale-105 sm:w-auto"
+  >
+    <FileText size={16} />
+    View Resume
+  </a>
 
-            <a
-              href="/resume.pdf"
-              className="flex h-16 w-16 items-center justify-center rounded-full bg-white text-xs font-medium text-black transition duration-300 hover:scale-105 sm:h-20 sm:w-20 sm:text-sm"
-            >
-              Resume
-            </a>
+  <a
+    href="/resume.pdf"
+    download="Moiz_Bookwala_Resume.pdf"
+    className="flex w-full items-center justify-center gap-2 rounded-full border border-white/10 px-5 py-3 text-sm text-white transition duration-300 hover:bg-white hover:text-black sm:w-auto"
+  >
+    <Download size={16} />
+    Download
+  </a>
 
-          </div>
+</div>
 
         </div>
 
